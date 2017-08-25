@@ -17,6 +17,19 @@ npm run build
 # server
 npm start
 
+# import materialize-css 
+## error line 8579
+
+error
+var $ = window.jQuery,
+	$win = $(window),
+	$doc = $(document);
+
+success
+var $ = jQuery,
+	$win = $(window),
+	$doc = $(document);
+
 
 ```
 

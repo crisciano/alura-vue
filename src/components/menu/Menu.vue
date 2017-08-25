@@ -1,17 +1,24 @@
 <template>
-	<nav id="nav">
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <router-link class="navbar-brand" :to="{ name: 'Home' }">Navbar</router-link >
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav" v-for="route in routes">
+	      <li class="nav-item">
+	        <router-link :to="route.path ? route.path : '/'">{{ route.name }}</router-link>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	<!-- <nav id="nav">
       <ul>
       	<li v-for="route in routes">
       		<router-link :to="route.path ? route.path : '/'">{{ route.name }}</router-link>
       	</li>
-        <!-- <li class="li">
-          <router-link to='/'> home </router-link>
-        </li>
-        <li class="li">
-          <router-link to='/cadastro'> cadastro </router-link>
-        </li> -->
       </ul>
-    </nav>
+    </nav> -->
 	
 </template>
 
@@ -32,9 +39,7 @@
 
 <style lang="scss">
 	#nav{
-		li{ padding: 10px 20px; 
-			background: #ccc;
-			margin: 0 5px;
+		li{ 
 			a{ text-decoration: none;
 				color: #fff ;} 
 		}
